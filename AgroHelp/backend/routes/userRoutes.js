@@ -51,6 +51,24 @@ router.post("/addMessage", async (req, res) => {
     }
 })
 
+router.post("/addArticle", async (req, res) => {
+    try{
+        const { image } = req.files;
+        const {userID, header, content, category} = req.body
+        image.mv('./images/' + image.name);
+        await userWorkers.addArticle(userID, header, content, category, image.name)
+        res.json({success: true})
+    }
+
+    catch(err){
+        console.log(err)
+        res.json({
+            success: false,
+            status: 500
+        })
+    }
+})
+
 router.post("/getNews", async (req, res) => {
     try{
         const result = await userWorkers.getNews()
@@ -115,9 +133,9 @@ router.post("/getForums", async (req, res) => {
     }
 })
 
-router.post("/getLectorium", async (req, res) => {
+router.post("/getArticles", async (req, res) => {
     try{
-        const result = await userWorkers.getLectorium()
+        const result = await userWorkers.getArticles()
 
         res.json(result)
     }

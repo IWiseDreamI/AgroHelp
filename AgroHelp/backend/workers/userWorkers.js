@@ -67,6 +67,17 @@ const userSQL = {
         catch(err){return err}
     },
 
+    async addArticle(userID, header, content, category, image){
+        try{
+            const query = "INSERT INTO lectorium(user_id, header, content, category, image) VALUES(?, ?, ?, ?, ?)"
+
+            await sql.query(query, [userID, header, content, category, image]).then(result => {return result})
+
+            return this.messages.success
+        }
+        catch(err){return err}
+    },
+
     async getUser(userID){
         try{
             const query = "SELECT * FROM users WHERE id = ?"
@@ -87,7 +98,7 @@ const userSQL = {
         catch(err){return err}
     },
 
-    async getLectorium(){
+    async getArticles(){
         try{
             const query = "SELECT * FROM lectorium"
             const result = await sql.query(query).then(result => {return result[0]})

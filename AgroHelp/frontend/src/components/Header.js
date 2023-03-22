@@ -1,6 +1,8 @@
 import "../css/Header.css"
+import logo from "../images/logo.svg"
+import logo2 from "../images/logo2.svg"
 
-function Header({setMain, user}) {
+function Header({main, setMain, user}) {
 
     const changeMain = (event) => {
         setMain(event.target.id)
@@ -22,7 +24,11 @@ function Header({setMain, user}) {
 
     return (
         <header className='Header'>
-            <div className="logo">AgroHelp</div>
+            {main === "Start" || (main === "Personal" && user === undefined)?
+                <img src={logo2} alt="AgroHelp" className="logo" />:
+                <img src={logo} alt="AgroHelp" className="logo" />
+            }
+            
             <nav className="nav">
                 <div onClick={changeMain}   className="nav_item bold"   id="Start">Главная</div>
                 <div onClick={changeMain}   className="nav_item"        id="News">Новости</div>

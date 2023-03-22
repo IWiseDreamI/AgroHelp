@@ -21,8 +21,8 @@ function App() {
 
     return (
         <div className='App'>
-            <Header user={user} setMain={setMainState}/>
-            <Main main={mainState} user={user} setUser={setUser} />
+            <Header main={mainState} user={user} setMain={setMainState}/>
+            <Main main={mainState} user={user} setUser={setUser} setMain={setMainState}/>
             <Footer />
         </div>
     );

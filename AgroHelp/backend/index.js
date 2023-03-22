@@ -2,6 +2,7 @@ import cors from "cors";
 import express from "express"
 import config from "./config.js"
 import cookieParser from "cookie-parser";
+import fileUpload from "express-fileupload";
 
 import authRouter from "./routes/authRoutes.js"
 import userRouter from "./routes/userRoutes.js"
@@ -19,6 +20,10 @@ const corsConfig = {
 app.use(cors(corsConfig));  
 app.use(express.json())
 app.use(cookieParser())
+
+app.use(express.static('public')); 
+app.use('/images', express.static('images'));
+app.use(fileUpload())
 
 // Authorization 
 

@@ -12,13 +12,7 @@ header{
 }
 
 .logo{
-    color: #EEE5D2;
-    font-size: 25px;
-    padding: 5px 20px;
-    font-weight: bolder;
-    border-radius: 20px;
-    font-family: "Comfortaa";
-    background-color: #4E6C3E;
+    height: 60%;
 }
 
 .nav{
