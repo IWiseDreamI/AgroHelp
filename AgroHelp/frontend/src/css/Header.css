@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
+header{
+    top: 0;
+    width: 90%;
+    height: 10vh;
+    display: flex;
+    padding: 0 5%;
+    position: absolute;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    color: #EEE5D2;
+    font-size: 25px;
+    padding: 5px 20px;
+    font-weight: bolder;
+    border-radius: 20px;
+    font-family: "Comfortaa";
+    background-color: #4E6C3E;
+}
+
+.nav{
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav *{
+    user-select: none;
+}
+
+
+.nav_item{
+    color: #EEE5D2;
+    cursor: pointer;
+    padding: 0 7px;
+    transition: 0.6s transform;
+    position: relative;
+}
+
+.nav-green .nav_item{
+    color: #4E6C3E;
+}
+
+.nav-green .nav_item::after{
+    background-color: #4E6C3E;
+}
+
+
+.nav_button{
+    color: #4E6C3E;
+    transition: 0.6s;
+    padding: 5px 20px;
+    border-radius: 20px;
+    background-color: #EEE5D2;
+}
+
+.nav_item::after{
+    left: 0;
+    width: 0;
+    content: "";
+    height: 2px;
+    bottom: -4px;
+    transition: 0.6s;
+    border-radius: 4px;
+    position: absolute;
+    background-color: #EEE5D2;
+}
+
+.nav_item:hover::after{
+    width: 100%;
+}
+
+.nav_item:hover{
+    transform: scale(1.05);
+}
+
+.bold{
+    font-weight: 600;
+    transform: scale(1.05);
+}
+.bold::after{
+    width: 100%;
+}

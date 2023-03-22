@@ -1,0 +1,31 @@
+footer{
+    width: 90%;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    background-color: #4E6C3E;
+}
+
+footer hr{
+    width: 100%;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-content div{
+    display: flex;
+    color: #EEE5D2;
+    flex-direction: column;
+}
+
+.footer-content div *{
+    margin: 5px 0;
+}
+
+a{
+    color: #EEE5D2;
+    text-decoration: none;
+}

@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home__content{
+    width: 50%;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.home__socials{
+    padding: 5px;
+    display: flex;
+    margin-right: 5%;
+    align-items: center;
+    border-radius: 10px;
+    flex-direction: column;
+    background-color: #000000c0;
+    justify-content: space-between;
+}
+
+.home__social{
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    transition: 0.6s;
+    position: relative;
+    border-radius: 50%;
+    box-shadow: #7700ffc0 0 0 10px;
+    background: linear-gradient(70deg, purple, blue)
+}
+
+.social{
+    z-index: 1;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.interactive{
+    height: 50%;
+    font-size: 60px;
+    margin-left: 5%;
+    font-family: Tilt Neon;
+}
+
+.interactive *{
+    transition: 0.6s;
+    user-select: none;
+    display: inline-block;
+}
+
+.interactive__p{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    line-height: 10px;
+    color: #ffffff80;
+}
+
+.interactive button{
+    color: #fff;
+    font-size: 20px;
+    overflow: hidden;
+    line-height: 100%;
+    padding: 15px 30px;
+    position: relative;
+    border-radius: 20px;
+    font-family: Tilt Neon;
+    border: #fff double 4px;
+    background-color: transparent;
+    box-shadow: #ffffff80 1px 0 10px;
+    text-shadow: #ffffff80 1px 0 10px;
+}
+
+.interactive button::after{
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: 1s;
+    position: absolute;
+    align-items: center;
+    font-family: Tilt Neon;
+    content: "Contact me!";
+    justify-content: space-around;
+    background: linear-gradient(70deg, purple, blue);
+}
+
+.interactive button:hover{
+    box-shadow: #8027fddc 5px 0 20px;
+}
+
+.interactive button:hover::after{
+    opacity: 1;
+}
+
+.interactive span{
+    margin: 10px;
+}
+
+.bouncing{
+    animation: rubberband alternate ease-out 0.8s;
+}
+
+.flip{
+    animation: flip alternate ease-out 1s;
+}
+
+.shake{
+    animation: shake alternate ease-out 0.8s;
+}
+
+.spin{
+    animation: spin alternate ease-out 1s;
+}
+
+.jump{
+    animation: jump alternate ease-out 0.8s;
+}
+
+.fade{
+    animation: fade alternate linear 1.2s;
+}
+
+@keyframes rubberband {
+    0% {transform: scaleX(1);}
+    40%{transform: scaleX(1.12) scaleY(0.75);}
+    55%{transform: scaleX(0.85) scaleY(1);}
+    65%{transform: scaleX(1.09) scaleY(0.85);}
+    75%{transform: scaleX(0.9)  scaleY(1);}
+    90%{transform: scaleX(1.05) scaleY(0.95);}
+    100%{transform: scaleX(1) scaleY(1);}
+}
+
+@keyframes flip {
+    0%{ transform: rotateY(0deg); }
+    25%{ transform: rotateY(90deg); }
+    50%{ transform: rotateY(180deg); }
+    75%{ transform: rotateY(90deg); }
+    100%{ transform: rotateY(0deg); }
+}
+
+@keyframes shake {
+    10%, 90% {transform: translate3d(-1px, 0, 0);}
+    20%, 80% {transform: translate3d(2px, 0, 0);}
+    30%, 50%, 70% {transform: translate3d(-4px, 0, 0);}
+    40%, 60% {transform: translate3d(4px, 0, 0);}
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+@keyframes jump { 
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-6px);} 
+    60% {transform: translateY(-3px);} 
+}
+
+@keyframes fade{
+    0%{ opacity: 1;}
+    25%{ opacity: 0.6;}
+    50%{ opacity: 1;}
+    75%{ opacity: 0.6;}
+    100%{ opacity: 1; }
+}

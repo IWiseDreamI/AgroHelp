@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap');
+
+.App {
+	display: flex;
+	text-align: center;
+	padding: 10vh 0 0;
+	align-items: center;
+	flex-direction: column;
+	overflow-x: hidden;
+	background-color: transparent;
+}
+
+.AuthDiv{
+	top: 50%;
+	left: 50%;
+	width: 40%;
+	height: 60%;
+	border: none;
+	display: flex;
+	position: fixed;
+	overflow: hidden;
+	align-items: center;
+	border-radius: 30px;
+	background-color: #fff;
+	transform: translate(-50%, -50%);
+}
+
+.AuthDiv__div{
+	width: 33%;
+	height: 100%;
+	background-color: #4E6C3E;
+}
+
+.AuthDiv form{
+	width: 67%;
+	height: 80%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.AuthDiv form h2{
+	width: 70%;
+	margin: 0 0 10px;
+	text-align: left;
+	font-family: Manrope;
+	letter-spacing: 1px;
+	color: #4E6C3E;
+}
+
+.AuthDiv form p{
+	text-align: left;
+	margin: 5px 0 15px;
+	width: 70%;
+	cursor: pointer;
+	font-size: 12px;
+}
+
+.AuthDiv form button{
+	width: 70%;
+	border: none;
+	padding: 10px;
+	color: #fff;
+	cursor: pointer;
+	border-radius: 20px;
+	background-color: #4E6C3E;
+}
+
+input{
+	margin: 10px 0;
+	outline: none;
+	padding: 15px;
+	width: 65%;
+	border-radius: 5px;
+	border: 1px transparent solid;
+	background-color: #E5E5E5;
+}
+
+input:focus{
+	border: 1px #4E6C3E solid;
+	background-color: #fff;
+}
+
+.background{
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: -1;
+	overflow: hidden;
+	position: absolute;
+	background-position: center;
+	background-image: url("../images/background.png");
+}

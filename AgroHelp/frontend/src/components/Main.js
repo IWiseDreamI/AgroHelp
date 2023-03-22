@@ -1,0 +1,25 @@
+import { useEffect } from "react";
+import Auth from "./Auth";
+import News from "./News";
+import Start from "./Start";
+import Personal from "./Personal";
+import Lectorium from "./Lectorium";
+
+
+function Main({main, user, setUser}) {
+    useEffect(() => {
+        console.log()
+    })
+    return (
+        <main className='Main'>
+            {main === "Start" || (main === "Personal" && user === undefined)? <div className="background"/>: undefined}
+            {main === "Start"? <Start />: undefined}
+            {main === "News"? <News />: undefined}
+            {main === "Lectorium"? <Lectorium />: undefined}
+            {main === "Personal" && user === undefined? <Auth setUser={setUser}/>: undefined}
+            {main === "Personal" && user !== undefined? <Personal />: undefined}
+        </main>
+    );
+};
+
+export default Main;
