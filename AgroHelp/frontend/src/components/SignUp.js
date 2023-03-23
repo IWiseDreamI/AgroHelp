@@ -1,7 +1,7 @@
 import Axios from "axios"
 import Cookies from 'js-cookie';
 
-function SignUp({changeAuth, setUser}) {
+function SignUp({changeAuth, setUser, setMain}) {
 
     const switchAuth = () => {
         changeAuth("SignIn")
@@ -20,9 +20,13 @@ function SignUp({changeAuth, setUser}) {
             }
             data[child.name] = child.value
         }        
-        Axios.post("/auth/signUp", data).then(() => [
-            setUser(Cookies.get("UserID"))
-        ]) 
+        Axios.post("/auth/signUp", data).then(() => {
+            setUser(Cookies.get("UserID"));
+            const items = document.querySelector(".nav").childNodes
+            items.forEach((item) => {
+                item.classList.add("nav-green")
+            })
+        }) 
         
     }
 

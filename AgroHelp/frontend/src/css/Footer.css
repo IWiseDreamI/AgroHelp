@@ -2,8 +2,14 @@ footer{
     width: 90%;
     padding: 5%;
     display: flex;
+    align-items: flex-start;
     flex-direction: column;
     background-color: #4E6C3E;
+}
+
+.footer-logo{
+    height: 75px;
+    margin-bottom: 15px;
 }
 
 footer hr{
@@ -11,6 +17,7 @@ footer hr{
 }
 
 .footer-content{
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }

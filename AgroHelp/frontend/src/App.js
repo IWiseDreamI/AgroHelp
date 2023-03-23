@@ -23,7 +23,7 @@ function App() {
         <div className='App'>
             <Header main={mainState} user={user} setMain={setMainState}/>
             <Main main={mainState} user={user} setUser={setUser} setMain={setMainState}/>
-            <Footer />
+            {user === undefined && mainState === "Personal" ? undefined: <Footer />}
         </div>
     );
 };

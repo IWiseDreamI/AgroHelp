@@ -3,7 +3,7 @@ import SignIn from "./SignIn"
 import SignUp from "./SignUp"
 
 
-function Auth({setUser}) {
+function Auth({setUser, setMain}) {
     const [authState, setAuthState] = useState();
 
     useEffect(() => {
@@ -12,7 +12,7 @@ function Auth({setUser}) {
 
     return (
         <div className="Auth">
-            {authState === "SignIn"? <SignIn changeAuth={setAuthState} setUser={setUser}/>: <SignUp changeAuth={setAuthState} setUser={setUser}/>}
+            {authState === "SignIn"? <SignIn changeAuth={setAuthState} setUser={setUser}/>: <SignUp changeAuth={setAuthState} setUser={setUser} setMain={setMain}/>}
         </div>
     );
 };

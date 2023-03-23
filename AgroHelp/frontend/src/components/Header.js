@@ -9,15 +9,25 @@ function Header({main, setMain, user}) {
         
         const items = document.querySelector(".nav").childNodes
         for(let item of items){
-            item.classList.remove("bold")
-            if(item.id === event.target.id){
-                item.classList.add("bold")
-                if(item.id !== "Start" || (item.id !== "Personal" && user === undefined)){
-                    item.parentNode.classList.add("nav-green")
-                }
-                else{
-                    item.parentNode.classList.remove("nav-green")
-                }
+            if(item.id !== event.target.id){
+                item.classList.remove("bold")
+                continue
+            }
+            item.classList.add("bold")
+            if(item.id !== "Start" && (item.id !== "Personal" && user === undefined)){
+                items.forEach((item) => {
+                    item.classList.add("nav-green")
+                })
+            }
+            else if(user !== undefined && item.id !== "Start"){
+                items.forEach((item) => {
+                    item.classList.add("nav-green")
+                })
+            }
+            else{
+                items.forEach((item) => {
+                    item.classList.remove("nav-green")
+                })
             }
         }
     }

@@ -69,7 +69,7 @@ function Lectorium({setMain}) {
                         </div>
                         <div>
                             <label htmlFor="">Категория</label>
-                            <select name="category">
+                            <select name="category" required>
                                 <option value="Животноводство"> Животноводство</option>
                                 <option value="Растениеводство">Растениеводство</option>
                             </select>

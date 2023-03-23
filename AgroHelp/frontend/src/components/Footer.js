@@ -1,9 +1,11 @@
 import "../css/Footer.css"
+import logo from "../images/logo2.svg"
+
 
 function Footer() {
     return (
         <footer className="Footer">
-            <div className="footer-logo"></div>
+            <img src={logo} alt="" className="footer-logo" />
             <hr />
             <div className="footer-content">
                 <div>

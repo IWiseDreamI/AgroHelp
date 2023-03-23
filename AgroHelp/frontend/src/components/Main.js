@@ -13,10 +13,10 @@ function Main({main, user, setUser, setMain}) {
     return (
         <main className='Main'>
             {main === "Start" || (main === "Personal" && user === undefined)? <div className="background"/>: undefined}
-            {main === "Start"? <Start />: undefined}
+            {main === "Start"? <Start user={user} setMain={setMain} />: undefined}
             {main === "News"? <News />: undefined}
             {main === "Lectorium"? <Lectorium setMain={setMain}/>: undefined}
-            {main === "Personal" && user === undefined? <Auth setUser={setUser}/>: undefined}
+            {main === "Personal" && user === undefined? <Auth setMain={setMain} setUser={setUser}/>: undefined}
             {main === "Personal" && user !== undefined? <Personal />: undefined}
         </main>
     );
